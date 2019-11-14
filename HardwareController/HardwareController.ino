@@ -61,7 +61,7 @@ std::map<String, String> getReadings () {
 }
 
 String prepareQueryString (std::map<String, String>& data) {
-  String query = "http://192.168.1.69:3000/portal?mac=" + String(WiFi.macAddress());
+  String query = "http://13.57.235.38:8080/portal?mac=" + String(WiFi.macAddress());
   for (auto entry : data) {
     query += "&" + entry.first + "=" + entry.second;
   }
