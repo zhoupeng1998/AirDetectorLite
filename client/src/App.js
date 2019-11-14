@@ -56,16 +56,32 @@ class App extends Component {
                     data: [65, 59, 80, 81, 56, 55, 40]
                 }*/
                 //,
-                {label: "Temperature", data: this.state.temperature, borderColor: 'rgba(75,192,192,1)', fill:false},
-                {label: "Humidity", data: this.state.humidity, borderColor: 'rgba(255, 0, 0, 1)', fill:false}
+                {label: "Temperature", yAxisID: 'Temperature', data: this.state.temperature, borderColor: 'rgba(75,192,192,1)', fill:false},
+                {label: "Humidity", yAxisID: 'Humidity', data: this.state.humidity, borderColor: 'rgba(255, 0, 0, 1)', fill:false}
                 //*/
             ]
         }
 
         const options = {
-            title: {
-                display: true,
-                fill: false
+            scales: {
+                yAxes: [{
+                  id: 'Temperature',
+                  type: 'linear',
+                  scaleLabel: {
+                    labelString: 'Temperature (ºC)',
+                    display: true,
+                  },
+                  position: 'left',
+                },
+                {
+                  id: 'Humidity',
+                  type: 'linear',
+                  scaleLabel: {
+                    labelString: 'Humidity (%)',
+                    display: true,
+                  },
+                  position: 'right',
+                }]
             }
         }
         return (
