@@ -12,14 +12,8 @@
 #define INDOOR_BUTTON_PIN 13
 #define REQUEST_INTERVAL 3000
 
-const char* WifiSsid = "ATTazKqq4I";
-const char* WifiPsk = "x9y5djk%+4wn";
-
-//const char* WifiSsid = "UCInet Mobile Access";
-//const char* WifiPsk = "";
-
-//const char* WifiSsid = "ZP-iPhone7";
-//const char* WifiPsk = "zpwobaba";
+const char* WifiSsid = "UCInet Mobile Access";
+const char* WifiPsk = "";
 
 Adafruit_CCS811 ccs;
 Adafruit_SHT31 sht = Adafruit_SHT31();
@@ -61,7 +55,7 @@ std::map<String, String> getReadings () {
 }
 
 String prepareQueryString (std::map<String, String>& data) {
-  String query = "http://13.57.235.38:8080/portal?mac=" + String(WiFi.macAddress());
+  String query = "http://localhost:8080/portal?mac=" + String(WiFi.macAddress());
   for (auto entry : data) {
     query += "&" + entry.first + "=" + entry.second;
   }
