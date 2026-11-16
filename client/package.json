@@ -11,6 +11,12 @@
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
   },
+  "resolutions": {
+    "node-forge": "^1.4.3"
+  },
+  "overrides": {
+    "node-forge": "^1.4.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
